@@ -1,0 +1,11 @@
+Git token: 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
+Git URL: https://github.com/AlbanTeng84/VueTuts_ubuntu_OS.git
+
+error:unable to access '<URL>': server certificate verification failed.
+resolved: vi /root/.gitconfig -> input sslVerify = false 
+
+reset git credentials
+git config --system --unset credential.helper
+
+by token to login git:
+	git remote set-url origin https://<Git token>@github.com/AlbanTeng84/VueTuts_ubuntu_OS.git
