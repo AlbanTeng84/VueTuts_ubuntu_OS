@@ -1,6 +1,9 @@
 <template>
   <h1>{{ title }}</h1>
-  <Button text="Add Task" color="green"/>
+  <Button text="Add Task" color="blue"/>
+  <Button text="Add Task" color="red"/>
+  <Button text="Add Task" color="purple"/>
+  <Button text="Add Task" color="grey"/>
 </template>
 
 <script>
