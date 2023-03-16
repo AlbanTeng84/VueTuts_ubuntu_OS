@@ -1,4 +1,4 @@
-# vue-css
+# vue-bootstrap
 
 ## Project setup
 ```
