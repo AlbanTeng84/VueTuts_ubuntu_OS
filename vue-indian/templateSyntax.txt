@@ -1,0 +1,6 @@
+Vue Template condition statement
+    :class="num === currentDate ? 'text-yellow-800' : ''"
+        num === current Date -> condition
+        ? -> yes
+        : -> otherwise
+

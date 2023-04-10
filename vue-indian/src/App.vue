@@ -2,7 +2,8 @@
   <AppHeader />
   <div class="w-full flex">
     <!-- <GetRandomNum /> -->
-      <Calendar />
+    <Calendar />
+      
   </div>
   
 </template>

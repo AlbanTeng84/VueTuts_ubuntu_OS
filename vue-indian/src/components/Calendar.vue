@@ -13,7 +13,9 @@
         </section>
         <section class="flex flex-wrap">
             <p class="text-center" style="width:14.28%" v-for="num in startDay()" :key="num"></p>
-            <p class="text-center" style="width:14.28%" v-for="num in daysInMonth()" :key="num">{{num}}</p>
+            <p class="text-center" style="width:14.28%" v-for="num in daysInMonth()" 
+            :key="num" 
+            :class="num === currentDate ? 'text-yellow-800' : ''">{{num}}</p>
         </section>
         <section class="flex justify-between my-4">
             <button class="px-2 border rounded" @click="pre">Pre</button>
@@ -26,6 +28,7 @@
 export default {
     data(){
         return{
+            currentDate: new Date().getUTCDate(),
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
             currentDays:"",
