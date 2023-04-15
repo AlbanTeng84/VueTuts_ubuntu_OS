@@ -15,7 +15,7 @@
             <p class="text-center" style="width:14.28%" v-for="num in startDay()" :key="num"></p>
             <p class="text-center" style="width:14.28%" v-for="num in daysInMonth()" 
             :key="num" 
-            :class="num === currentDate ? 'text-yellow-800' : ''">{{num}}</p>
+            :class="currentDateClass(num)">{{num}}</p>
         </section>
         <section class="flex justify-between my-4">
             <button class="px-2 border rounded" @click="pre">Pre</button>
@@ -28,7 +28,7 @@
 export default {
     data(){
         return{
-            currentDate: new Date().getUTCDate(),
+            currentDate:new Date().getUTCDate(),
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
             currentDays:"",
@@ -60,6 +60,14 @@ export default {
                 this.currentMonth++;
             }
         },
+        clickToday(){
+            return this.currentDate
+        },
+        currentDateClass(num){
+            const calendarFullDate = new Date(this.currentYear,this.currentMonth,num).toDateString()
+            const currentFullDate = new Date().toDateString()
+            return calendarFullDate === currentFullDate ? 'text-yellow-600':''
+        }
         
     },
     computed:{

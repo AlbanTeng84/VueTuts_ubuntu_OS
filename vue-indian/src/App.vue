@@ -1,24 +1,28 @@
 <template>
-  <AppHeader />
+  <AppHeader @open-login-modal = "isLoginOpen = true" />
   <div class="w-full flex">
-    <!-- <GetRandomNum /> -->
-    <Calendar />
-      
+    <router-view></router-view>
   </div>
-  
+  <LoginModal v-if="isLoginOpen" @close-login="isLoginOpen = false"/>
 </template>
 
 <script>
-import GetRandomNum from './components/GetRandomNum.vue'
 import AppHeader from './components/AppHeader.vue'
-import Calendar from './components/Calendar.vue'
+import LoginModal from './components/LoginModal.vue'
+
 
 export default {
+  data(){
+        return{
+            isLoginOpen:false,
+        }
+    },
   name: 'App',
   components: {
-    GetRandomNum,
     AppHeader,
-    Calendar,
+    LoginModal,
+
+   
   }
 
 }
